@@ -1,0 +1,2 @@
+# AnimeApp
+Prueba técnica
