@@ -1,4 +1,4 @@
-package com.example.farmatodoanime.ui
+package com.example.farmatodoanime.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.farmatodoanime.R
 import com.example.farmatodoanime.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -28,10 +27,12 @@ class MainActivity : AppCompatActivity() {
         bottomNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.action_home -> {
+                    navController.popBackStack()
                     navController.navigate(R.id.fragment_home)
                     true
                 }
                 R.id.action_search -> {
+                    navController.popBackStack()
                     navController.navigate(R.id.fragment_search)
                     true
                 }

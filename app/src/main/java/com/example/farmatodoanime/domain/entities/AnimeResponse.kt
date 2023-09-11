@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class AnimeResponse(
     @SerializedName("data")
-    val data: List<AnimeResponseData>
+    val data: MutableList<AnimeResponseData>
 )
 
 data class AnimeResponseData(
@@ -13,7 +13,7 @@ data class AnimeResponseData(
     @SerializedName("title")
     val title: String,
     @SerializedName("images")
-    val poster: images,
+    val poster: Images,
     @SerializedName("score")
     val rating: String,
     @SerializedName("synopsis")
@@ -22,7 +22,12 @@ data class AnimeResponseData(
     val releaseDate: String,
 )
 
-data class images(
+data class Images(
+    @SerializedName("jpg")
+    val jpg: ImageJpg,
+)
+
+data class ImageJpg(
     @SerializedName("large_image_url")
-    val poster: String,
+    val url: String,
 )

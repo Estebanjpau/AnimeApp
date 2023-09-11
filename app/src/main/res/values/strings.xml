@@ -13,6 +13,13 @@
     <string name="homeTitle">Inicio</string>
     <string name="searchTitle">Busqueda</string>
     <string name="search">Buscar</string>
+    <string name="url">https://w7.pngwing.com/pngs/658/622/png-transparent-page-not-found-illustration.png</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="proximamente">En camino</string>
+    <string name="finalizado">Finalizado</string>
+    <string name="en_transmision">En emisión</string>
+    <string name="sinopsis">Sinopsis</string>
+    <string name="no_se_encontraron_resultados">No se encontraron resultados</string>
 </resources>

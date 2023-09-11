@@ -1,19 +1,20 @@
 package com.example.farmatodoanime.di
 
+import com.example.farmatodoanime.data.repositories.AnimeQueryServiceImpl
 import com.example.farmatodoanime.data.repositories.AnimeServiceImpl
+import com.example.farmatodoanime.domain.repositories.AnimeQueryService
 import com.example.farmatodoanime.domain.repositories.AnimeService
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
+import dagger.hilt.android.components.ViewModelComponent
 
 @Module
-@InstallIn(SingletonComponent::class)
-object AppModule {
+@InstallIn(ViewModelComponent::class)
+abstract class AppModule {
 
-    @Provides
-    fun provideAnimeService(impl: AnimeServiceImpl): AnimeService {
-        return impl
-    }
+    @Binds
+    abstract fun provideAnimeService(impl: AnimeServiceImpl): AnimeService
+    @Binds
+    abstract fun provideAnimeQueryServices(impl: AnimeQueryServiceImpl): AnimeQueryService
 }

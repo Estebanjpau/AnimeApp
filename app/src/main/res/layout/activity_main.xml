@@ -5,24 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
-    <include layout="@layout/content_main" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_app_bar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom"
-        app:backgroundTint="@color/DarkBackground"
-        app:itemIconTint="@color/accent"
-        app:itemTextColor="@color/accent"
-        app:itemIconSize="25dp"
-        app:itemHorizontalTranslationEnabled="true"
-        app:itemTextAppearanceActive="@style/labelM"
-        app:itemTextAppearanceInactive="@style/paragraphS"
-        app:menu="@menu/menu_bottombar">
+        android:layout_height="match_parent">
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        <include
+            android:id="@+id/include"
+            layout="@layout/content_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_app_bar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/DarkBackground"
+            app:itemHorizontalTranslationEnabled="true"
+            app:itemIconSize="25dp"
+            app:itemIconTint="@color/accent"
+            app:itemTextAppearanceActive="@style/labelM"
+            app:itemTextAppearanceInactive="@style/paragraphS"
+            app:itemTextColor="@color/accent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu_bottombar">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
